@@ -1,0 +1,10 @@
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.deps.json
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.runtimeconfig.json
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.runtimeconfig.dev.json
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.dll
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.pdb
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.csprojResolveAssemblyReference.cache
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.AssemblyInfo.cs
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.dll
+c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.pdb

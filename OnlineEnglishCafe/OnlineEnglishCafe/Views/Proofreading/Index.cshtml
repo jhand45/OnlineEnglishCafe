@@ -1,0 +1,21 @@
+@model IEnumerable<OnlineEnglishCafe.Models.ProofreadingApplication>
+
+@{
+    ViewData["Title"] = "Proofreading - ";
+}
+
+<h2>Proofreading Services</h2>
+<p>
+    If you have any assignments or work that you feel would benefit from being reviewed by one of our
+    professional proofreaders, please click the button below where you will be taken to a where we will
+    take your details, after which, someone from Online English Cafe will get in touch with a quote.  
+</p>
+<p>
+    Quotes are generally determined by the length of the item requiring review and the amount of work 
+    neded to bring it up to standard.
+</p>
+<button class="btn btn-info" type="button" id="proofreadingcreate"
+        onclick="location.href='@Url.Action("Apply", "Proofreading")'">Request Proofreading</button>
+
+
+    <p></p>
