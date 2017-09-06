@@ -6,10 +6,21 @@
 
     <h2>Online Lessons</h2>
 
-    @*Creates a grid that will display relevant teacher details*@
+    <p>Welcome to our homepage for online lessons</p>
+    <p>
+        We hope to have this feature available soon, in the meantime, check out our free
+        <a asp-controller="Resources" asp-action="Index">resources</a> 
+        or apply 
+        <a asp-controller="Proofreading" asp-action="Apply">here</a> 
+        to have your work proofread!
+    </p>
+
+<!--
+
+    @*@*Creates a grid that will display relevant teacher details*@
 
     <div class="container">
-    @for (var i = 0; i < Model.Count(); i++)
+    @*@for (var i = 0; i < Model.Count(); i++)
     {
         <div class="row">
             <div class="col-md-6">
@@ -42,5 +53,6 @@
                 <p>Teacher four</p>
             </div>
         </div>
-    </div>*@ 
+    </div>*@
 
+    -->

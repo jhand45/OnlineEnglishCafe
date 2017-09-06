@@ -8,3 +8,13 @@ c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEng
 c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.AssemblyInfo.cs
 c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.dll
 c:\users\james\documents\visual studio 2017\Projects\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.deps.json
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.runtimeconfig.json
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.runtimeconfig.dev.json
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.dll
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\bin\Debug\netcoreapp1.1\OnlineEnglishCafe.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.csprojResolveAssemblyReference.cache
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.AssemblyInfo.cs
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.dll
+C:\Users\James\Documents\Visual Studio 2017\Projects\OnlineEnglishCafe-master\OnlineEnglishCafe\OnlineEnglishCafe\obj\Debug\netcoreapp1.1\OnlineEnglishCafe.pdb

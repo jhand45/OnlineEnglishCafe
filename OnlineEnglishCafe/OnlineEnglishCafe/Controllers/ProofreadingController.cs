@@ -28,6 +28,7 @@ namespace OnlineEnglishCafe.Controllers
         }
 
         // GET: Proofreading/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +47,7 @@ namespace OnlineEnglishCafe.Controllers
         }
 
         // GET: Proofreading/Apply
+        [HttpGet]
         public IActionResult Apply()
         {
             return View();
@@ -64,7 +66,7 @@ namespace OnlineEnglishCafe.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Confirmed");
             }
-            return View(proofreadingApplication);
+            return View("ApplicationError");
         }
 
         //Post: Proofreading/Create Confirmation

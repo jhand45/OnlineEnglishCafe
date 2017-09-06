@@ -10955,10 +10955,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\James\\documents\\visual studio 2017\\Projects\\OnlineEnglishCafe\\OnlineEnglishCafe\\OnlineEnglishCafe.csproj",
+      "projectUniqueName": "C:\\Users\\James\\Documents\\Visual Studio 2017\\Projects\\OnlineEnglishCafe-master\\OnlineEnglishCafe\\OnlineEnglishCafe\\OnlineEnglishCafe.csproj",
       "projectName": "OnlineEnglishCafe",
-      "projectPath": "C:\\Users\\James\\documents\\visual studio 2017\\Projects\\OnlineEnglishCafe\\OnlineEnglishCafe\\OnlineEnglishCafe.csproj",
-      "outputPath": "C:\\Users\\James\\documents\\visual studio 2017\\Projects\\OnlineEnglishCafe\\OnlineEnglishCafe\\obj\\",
+      "projectPath": "C:\\Users\\James\\Documents\\Visual Studio 2017\\Projects\\OnlineEnglishCafe-master\\OnlineEnglishCafe\\OnlineEnglishCafe\\OnlineEnglishCafe.csproj",
+      "outputPath": "C:\\Users\\James\\Documents\\Visual Studio 2017\\Projects\\OnlineEnglishCafe-master\\OnlineEnglishCafe\\OnlineEnglishCafe\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
