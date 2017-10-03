@@ -26,15 +26,17 @@ namespace OnlineEnglishCafe.Models
         [DataType(DataType.EmailAddress)]
         public override string Email { get; set; }
 
-        public MembershipType MembershipType { get; set; }
+        public virtual MembershipType MembershipType { get; set; }
 
         [Required]
+        [StringLength(100, ErrorMessage = "Invalid Password")]
         [DataType(DataType.Password)]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -42,6 +44,6 @@ namespace OnlineEnglishCafe.Models
     {
         Admin,
         Teacher,
-        Student,
+        Student
     }
 }

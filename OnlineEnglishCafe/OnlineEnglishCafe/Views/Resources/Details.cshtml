@@ -1,0 +1,12 @@
+@model OnlineEnglishCafe.Models.ResourcesViewModels.DetailsViewModel
+
+
+<h2>@Model.Title</h2>
+<h4>@Model.AuthorFirstName @Model.AuthorSecondName</h4>
+<h6>Published @Model.Published</h6>
+@if (Model.Edited != null)
+{
+    <h6>Edited @Model.Edited</h6>
+}
+
+<p>@Model.Content</p>

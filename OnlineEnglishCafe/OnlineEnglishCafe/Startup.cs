@@ -39,6 +39,13 @@ namespace OnlineEnglishCafe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
+            services.AddSingleton(Configuration); //Services need to be added as singletons if they contain caches that should persist beyond the lifetime of a single context instance.
+
+            //adding my resources service
+            services.AddScoped<IResources, ResourceServices>();
+
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -46,8 +53,6 @@ namespace OnlineEnglishCafe
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-            services.AddMvc();
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
@@ -75,6 +80,7 @@ namespace OnlineEnglishCafe
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

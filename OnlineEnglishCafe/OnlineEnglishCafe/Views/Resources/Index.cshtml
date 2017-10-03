@@ -1,8 +1,46 @@
-
-@{
-    ViewData["Title"] = "Resources";
-}
+@model OnlineEnglishCafe.Models.ArticleViewModels.ArticleIndexModel
 
 <h2>Resources</h2>
 
-<p>This is the page that will contain the learning resources</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Posted
+            </th>
+    </thead>
+
+    <tbody>
+        @foreach (var article in Model.ArticleList)
+        {
+            <tr class="articleRow">
+                <td>
+                    <a asp-action="Details" asp-controller="Resources" asp-route-id="@article.Id">@article.Title</a>
+                </td>
+                <td class="">
+                    @* Later we will link this to the author homepage *@
+                    @article.AuthorFirstName @article.AuthorSecondName
+                </td>
+                <td class="">
+                    @if (article.Edited == null)
+                    {
+                        @article.Published.Date;
+                    }
+                    else{ @article.Edited.Date; }
+                </td>
+
+                @*<td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>

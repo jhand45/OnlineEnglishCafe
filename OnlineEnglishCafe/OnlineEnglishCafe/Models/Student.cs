@@ -9,26 +9,23 @@ namespace OnlineEnglishCafe.Models
 {
     public class Student
     {
-        [Key]
         public int StudentId { get; set; }
 
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
-        
         [Required]
-        [StringLength(30, ErrorMessage = "Please condense your city name")]
-        [Display(Name = "Current City")]
-        public string City { get; set; }
+        [StringLength(30, ErrorMessage = "Please condense your location")]
+        [Display(Name = "Current Location")]
+        public string Location { get; set; }
 
-        [Required]
-        [StringLength(30, ErrorMessage = "No country has a name that long!")]
-        [Display(Name = "Current Country")]
-        public string Country { get; set; }
+        [StringLength(30, ErrorMessage = "Please tell us in less than 30 characters")]
+        [Display(Name = "What is your native language?")]
+        public string Native { get; set; }
 
-        [Display(Name ="Bio")]
+        [Display(Name ="Tell us about yourself?")]
         public string Bio { get; set; }
 
         [Display(Name = "Tell us why you are learning English?")]
         public string Purpose { get; set; }
+
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

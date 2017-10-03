@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using OnlineEnglishCafe.Models;
+using OnlineEnglishCafe.Models.ArticlesModels;
 
 namespace OnlineEnglishCafe.Data
 {
@@ -23,8 +24,18 @@ namespace OnlineEnglishCafe.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
-        public DbSet<OnlineEnglishCafe.Models.Teacher> Teacher { get; set; }
+        //users
+        public DbSet<OnlineEnglishCafe.Models.ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Admin> Admins { get; set; }
 
-        public DbSet<OnlineEnglishCafe.Models.ProofreadingApplication> ProofreadingApplication { get; set; }
+        //resources
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Article> Articles { get; set; }
+
+        //proofreading
+        public DbSet<ProofreadingApplication> ProofreadingApplication { get; set; }
+
     }
 }

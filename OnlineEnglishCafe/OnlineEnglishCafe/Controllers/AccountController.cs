@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 using OnlineEnglishCafe.Models;
 using OnlineEnglishCafe.Models.AccountViewModels;
 using OnlineEnglishCafe.Services;
+using OnlineEnglishCafe.Data;
 
 namespace OnlineEnglishCafe.Controllers
 {
@@ -24,6 +25,7 @@ namespace OnlineEnglishCafe.Controllers
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
         private readonly string _externalCookieScheme;
+        private ApplicationDbContext _context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
@@ -31,7 +33,8 @@ namespace OnlineEnglishCafe.Controllers
             IOptions<IdentityCookieOptions> identityCookieOptions,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -39,6 +42,20 @@ namespace OnlineEnglishCafe.Controllers
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _context = context;
+        }
+        
+        public void AddStudent(Student student)
+        {
+            _context.Add(student);
+            _context.SaveChanges();
+        }
+
+
+        private void AddTeacher(Teacher teacher)
+        {
+            _context.Add(teacher);
+            _context.SaveChanges();
         }
 
         //
@@ -104,15 +121,111 @@ namespace OnlineEnglishCafe.Controllers
 
 
         //MYCUSTOM
-        //GET :/Account/StudentRegister
+        //GET :/Account/StudentRegistration
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult StudentRegister(string returnUrl = null)
+        public IActionResult StudentRegistration(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
+        //POST: /Account/StudentRegistration
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> StudentRegistration(StudentRegistrationViewModel model, string returnUrl = null)
+        {
+            ViewData["returnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    FirstName = model.ApplicationUser.FirstName,
+                    SecondName = model.ApplicationUser.SecondName,
+                    UserName = model.ApplicationUser.Email,
+                    Email = model.ApplicationUser.Email,
+                    MembershipType = MembershipType.Student,
+                    Password = model.ApplicationUser.Password
+                };
+
+                var student = new Student
+                {
+                    Location = model.Student.Location,
+                    Native = model.Student.Native,
+                    Bio = model.Student.Bio,
+                    Purpose = model.Student.Purpose
+                };
+
+                AddStudent(student);
+                
+                var result = await _userManager.CreateAsync(user, model.ApplicationUser.Password);
+
+
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation(3, "User created a new account with password.");
+                    return RedirectToLocal(returnUrl);
+                }
+                AddErrors(result);
+            }
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        //GET :/Account/TeacherRegistration
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult TeacherRegistration(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        //POST: /Account/TeacherRegistration
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> TeacherRegistration(TeacherRegistrationViewModel model, string returnUrl = null)
+        {
+            ViewData["returnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    FirstName = model.ApplicationUser.FirstName,
+                    SecondName = model.ApplicationUser.SecondName,
+                    UserName = model.ApplicationUser.Email,
+                    Email = model.ApplicationUser.Email,
+                    MembershipType = MembershipType.Student,
+                    Password = model.ApplicationUser.Password
+                };
+
+                var teacher = new Teacher
+                {
+                    Location = model.Teacher.Location,
+                    Accent = model.Teacher.Accent,
+                    Native = model.Teacher.Native,
+                    Approved = false
+                };
+
+                AddTeacher(teacher);
+
+                var result = await _userManager.CreateAsync(user, model.ApplicationUser.Password);
+
+
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation(3, "User created a new account with password.");
+                    return RedirectToLocal(returnUrl);
+                }
+                AddErrors(result);
+            }
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
 
 
         //

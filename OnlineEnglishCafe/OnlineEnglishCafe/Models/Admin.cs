@@ -11,8 +11,7 @@ namespace OnlineEnglishCafe.Models
     {
         [Key]
         public int AdminId { get; set; }
-        
-        [ForeignKey("UserId")]
-        public int UserId { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }
